@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Label } from '../atoms/Label'
 import { RetDateTime, getDateTime } from '../../utils/common/dateTimeUtils'
+import { CurrentTime } from '../molecules/CurrentDate'
 
 const Component: React.FC = () => {
   const [dateTime, setDateTime] = useState<RetDateTime>()
@@ -19,8 +20,8 @@ const Component: React.FC = () => {
         <div className="mr-auto">
           <Label value={'Weather Info'} className="font-semibold text-2xl " />
         </div>
-        <div className="ml-auto">
-          <Label value={dateTime} className="font-semibold text-2xl " />
+        <div className="ml-auto my-auto font-semibold text-l">
+          <CurrentTime value={dateTime} />
         </div>
       </div>
     </header>

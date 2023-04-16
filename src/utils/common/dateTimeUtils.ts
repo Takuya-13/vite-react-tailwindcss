@@ -17,6 +17,29 @@ export const getDateTime = (): RetDateTime => {
   return [year, month, day, dayofweek, hour, minute, seconds]
 }
 
+/**
+ * APIレスポンスから曜日を取得
+ * @param dayofweek
+ * @returns
+ */
+export const getDayOfWeek = (dayofweek: number): string => {
+  const ret =
+    dayofweek === 0
+      ? '日'
+      : dayofweek === 1
+      ? '月'
+      : dayofweek === 2
+      ? '火'
+      : dayofweek === 3
+      ? '水'
+      : dayofweek === 4
+      ? '木'
+      : dayofweek === 5
+      ? '金'
+      : '土'
+  return ret
+}
+
 export type RetDateTime = [
   number,
   number,

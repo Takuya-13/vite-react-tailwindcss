@@ -49,7 +49,7 @@ export const Component: React.FC = () => {
       ? rain
       : weatherInfo?.weather[0].main === 'Wind'
       ? wind
-      : '-'
+      : sun
 
   useEffect(() => {
     ;(async () => {
