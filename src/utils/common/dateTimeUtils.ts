@@ -18,7 +18,7 @@ export const getDateTime = (): RetDateTime => {
 }
 
 /**
- * APIレスポンスから曜日を取得
+ * 曜日の取得
  * @param dayofweek
  * @returns
  */

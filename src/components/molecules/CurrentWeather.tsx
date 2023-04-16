@@ -6,22 +6,32 @@ import { Props } from '../templates/WeatherInfo'
 const Component: React.FC<Props> = (props) => {
   return (
     <React.Fragment>
-      {/* 現在時刻 */}
       {/* 現在の気温 */}
-      <div className="flex justify-center mb-4">
+      <div className="flex mb-7 mx-7">
         <Label
-          value={props.cityName}
-          className="text-2xl font-medium mr-4 my-auto"
+          value={`検索結果: ${props.cityName}`}
+          className="text-xl font-medium my-auto"
+        />
+        <input
+          type="form"
+          placeholder="都市を検索..."
+          className=" rounded-md border border-black mr-3 ml-6 px-4 my-auto"
+        />
+        <input
+          type="submit"
+          value="検索"
+          className="text-sm border-0 my-auto px-4 py-1 rounded-md bg-green-600 hover:bg-green-700 duration-300"
+          onClick={() => console.log('検索')}
         />
       </div>
-      <div className="flex justify-center">
+      <div className="flex mx-7">
+        <img src={props.icon} alt="" className="my-auto w-12 h-12 mr-5" />
         <Span
           value={props.temp}
           unit=""
-          className={`text-3xl my-auto  ${props.fontColor}`}
+          className={`text-5xl/relaxed font-black mt-auto ${props.fontColor}`}
         />
-        <Label value={'℃'} className="text-2xl font-medium mx-4 my-auto" />
-        <img src={props.icon} alt="" className="my-auto w-7 h-7" />
+        <Label value={'℃'} className="text-xl font-medium mx-2 mt-3" />
       </div>
       {/* 最高・最低気温 */}
       {/* 雲の量 */}
